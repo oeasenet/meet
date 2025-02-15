@@ -5,27 +5,27 @@ import type { Metadata, Viewport } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    default: 'LiveKit Meet | Conference app build with LiveKit open source',
-    template: '%s',
+    default: 'OeMeet - Seamless Online Meetings',
+    template: '%s | OeMeet',
   },
   description:
-    'LiveKit is an open source WebRTC project that gives you everything needed to build scalable and real-time audio and/or video experiences in your applications.',
+    'OeMeet is a free, feature-rich online meeting platform, seamlessly integrated with OEASE Organization Management System for efficient collaboration and communication.',
   twitter: {
-    creator: '@livekitted',
-    site: '@livekitted',
+    creator: '@oeasenet',
+    site: '@oeasenet',
     card: 'summary_large_image',
   },
   openGraph: {
-    url: 'https://meet.livekit.io',
+    url: 'https://oemeet.com',
     images: [
       {
-        url: 'https://meet.livekit.io/images/livekit-meet-open-graph.png',
+        url: 'https://oemeet.com/images/LogoVWhiteBG.png',
         width: 2000,
         height: 1000,
         type: 'image/png',
       },
     ],
-    siteName: 'LiveKit Meet',
+    siteName: 'OEASE Meet',
   },
   icons: {
     icon: {
@@ -35,10 +35,10 @@ export const metadata: Metadata = {
     apple: [
       {
         rel: 'apple-touch-icon',
-        url: '/images/livekit-apple-touch.png',
+        url: '/images/icon.png',
         sizes: '180x180',
       },
-      { rel: 'mask-icon', url: '/images/livekit-safari-pinned-tab.svg', color: '#070707' },
+      { rel: 'mask-icon', url: '/images/icon.svg', color: '#070707' },
     ],
   },
 };
