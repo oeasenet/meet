@@ -1,6 +1,6 @@
 'use client';
 
-import { formatChatMessageLinks, LiveKitRoom, VideoConference } from '@livekit/components-react';
+import { formatChatMessageLinks, LiveKitRoom, VideoConference, ControlBar } from '@livekit/components-react';
 import {
   ExternalE2EEKeyProvider,
   LogLevel,
@@ -14,12 +14,14 @@ import { DebugMode } from '@/lib/Debug';
 import { useMemo } from 'react';
 import { decodePassphrase } from '@/lib/client-utils';
 import { SettingsMenu } from '@/lib/SettingsMenu';
+import { useRouter } from 'next/navigation';
 
 export function VideoConferenceClientImpl(props: {
   liveKitUrl: string;
   token: string;
   codec: VideoCodec | undefined;
 }) {
+  const router = useRouter();
   const worker =
     typeof window !== 'undefined' &&
     new Worker(new URL('livekit-client/e2ee-worker', import.meta.url));
@@ -62,8 +64,9 @@ export function VideoConferenceClientImpl(props: {
       room={room}
       token={props.token}
       connectOptions={connectOptions}
+      onDisconnected={() => { router.push('/'); }}
       serverUrl={props.liveKitUrl}
-      audio={true}
+      audio={{ echoCancellation: true, noiseSuppression: true, autoGainControl: true }}
       video={true}
     >
       <VideoConference
