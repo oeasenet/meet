@@ -11,8 +11,6 @@ const nextConfig = {
     });
     return config;
   },
-  output: 'export',
-  distDir: "_static",
 };
 
 module.exports = nextConfig;
